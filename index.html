@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <link rel="icon" href="mylabel.png">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <div class="password-generator">
+        <div class="password-generator__inner">
+
+            <h3 class="password-generator__title">Random Password Generator</h3>
+            
+            <!-- поле для сгенерированного пароля и кнопка копирования -->
+            <input type="text" class="password-generator__password-field" name="password-generator__password-field" id="password-generator__password-field" disabled>
+            <span class="password-generator__copy-btn fa-regular fa-copy"></span>
+
+            <!-- индикатор силы пароля -->
+            <div class="password-generator__strength-indicator"></div>
+
+            <!-- выбор длины и динамический счетчик -->
+             <div class="password-generator__length-bar__header">
+                <label for="password-generator__length-bar">Length</label>
+                <span class="password-generator__length-bar__counter" id="medium">16</span>
+             </div>
+            <input type="range" name="password-generator__length-bar" id="password-generator__length-bar" class="password-generator__length-bar" min="4" max="24" step="1" value="16">
+            
+
+            <!-- дополнительные опции изменяющие паттерн генерации пароля -->
+            <div class="password-generator__options">
+                <label class="password-generator__options-title">Options</label>
+
+                <ul class="password-generator__options-list options-list">
+                    <li>
+                        <input type="checkbox" name="options-list__option" id="lowercase" class="options-list__option" checked>
+                        <label for="lowercase">Lowercase(a-z)</label>
+                    </li>
+                        
+                    <li>
+                        <input type="checkbox" name="options-list__option" class="options-list__option" id="uppercase">
+                        <label for="uppercase">Uppercase(A-Z)</label>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" name="options-list__option" class="options-list__option"  id="numbers" checked>
+                        <label for="numbers">Numbers(0-9)</label>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" name="options-list__option" class="options-list__option"  id="symbols">
+                        <label for="symbols">Symbols(-+^!$)</label>
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- кнопка генерации пароля -->
+            <button class="password-generator__btn btn--generate">Generate</button>
+        </div>
+
+        <ul class="popup-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

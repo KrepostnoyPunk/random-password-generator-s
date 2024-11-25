@@ -1,0 +1,19 @@
+body{
+    font-family: var(--font-main);
+    font-weight: 400;
+
+    color: var(--light-color);
+    background: var(--bg-color);
+
+    @include flex-center;
+
+    height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+* {
+    transition-duration: var(--transition-duration);
+}
